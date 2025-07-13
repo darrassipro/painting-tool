@@ -126,6 +126,39 @@
       50% { box-shadow: 0 0 0 5px #00ffbb80, 0 6px 30px #1e1d2f66; }
     }
     
+    /* Grid System */
+    .grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 5;
+      opacity: 0.3;
+      display: none;
+    }
+
+    .grid-overlay.show {
+      display: block;
+    }
+
+    .grid-line {
+      position: absolute;
+      background: #4960ff;
+      opacity: 0.4;
+    }
+
+    .grid-line.horizontal {
+      width: 100%;
+      height: 1px;
+    }
+
+    .grid-line.vertical {
+      width: 1px;
+      height: 100%;
+    }
+
     /* Selection overlay styling */
     .selection-overlay {
       position: absolute;
@@ -134,55 +167,55 @@
       animation: marchingAnts 1s linear infinite;
       z-index: 10;
     }
-    
+
     @keyframes marchingAnts {
       0% { border-offset: 0; }
       100% { border-offset: 8px; }
     }
-    
-    .footer { 
-      text-align: center; 
-      color: #b2bbda; 
-      font-size: .85em; 
-      margin: 8px 0 0 0; 
+
+    .footer {
+      text-align: center;
+      color: #b2bbda;
+      font-size: .85em;
+      margin: 8px 0 0 0;
       padding: 8px;
     }
-    
-    .smart-tip { 
-      background: #1e2130; 
-      color: #b3ffe4; 
-      border-radius: 9px; 
-      padding: 8px 16px; 
-      position: absolute; 
-      left: 50%; 
-      top: 15px; 
-      transform: translateX(-50%); 
-      font-size: 0.9em; 
-      box-shadow: 0 4px 20px #0c0e2190; 
-      z-index: 999; 
+
+    .smart-tip {
+      background: #1e2130;
+      color: #b3ffe4;
+      border-radius: 9px;
+      padding: 8px 16px;
+      position: absolute;
+      left: 50%;
+      top: 15px;
+      transform: translateX(-50%);
+      font-size: 0.9em;
+      box-shadow: 0 4px 20px #0c0e2190;
+      z-index: 999;
       display: none;
       max-width: 90%;
       text-align: center;
       animation: tipSlideIn 0.3s ease;
     }
-    
+
     @keyframes tipSlideIn {
       from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
       to { opacity: 1; transform: translateX(-50%) translateY(0); }
     }
-    
-    .show-tip { 
+
+    .show-tip {
       display: block;
     }
-    
-    .palette { 
-      display: inline-flex; 
-      margin-left: 8px; 
+
+    .palette {
+      display: inline-flex;
+      margin-left: 8px;
       gap: 3px;
       flex-wrap: wrap;
     }
-    
-    .palette div { 
+
+    .palette div {
       width: 16px;
       height: 16px;
       display: inline-block;
@@ -191,25 +224,25 @@
       border: 1px solid #2e304d;
       transition: all 0.2s;
     }
-    
+
     .palette div:hover {
       transform: scale(1.1);
       border-color: #4960ff;
     }
-    
-    .palette div.selected { 
+
+    .palette div.selected {
       border: 2px solid #09e9c6;
       transform: scale(1.15);
     }
-    
-    #magicWandBtn.active { 
+
+    #magicWandBtn.active {
       background: #09e9c6;
       color: #213;
     }
-    
+
     #ai-panel {
       position: fixed;
-      top: 70px; 
+      top: 70px;
       right: 10px;
       background: #1a1c2e;
       color: #eafff8;
@@ -225,62 +258,62 @@
       max-height: 80vh;
       overflow-y: auto;
     }
-    
-    #ai-panel h3 { 
-      margin: 0 0 12px 0; 
-      font-size: 1.1em; 
+
+    #ai-panel h3 {
+      margin: 0 0 12px 0;
+      font-size: 1.1em;
       color: #b1f8e9;
       border-bottom: 1px solid #2e3151;
       padding-bottom: 8px;
     }
-    
-    .ai-row { 
+
+    .ai-row {
       margin-bottom: 12px;
       padding: 8px;
       background: #232538;
       border-radius: 6px;
     }
-    
-    .ai-row label { 
+
+    .ai-row label {
       display: block;
       margin-bottom: 6px;
       font-weight: 600;
       color: #b1f8e9;
       font-size: 0.9em;
     }
-    
-    .ai-slider { 
+
+    .ai-slider {
       width: 100px;
       margin-right: 8px;
     }
-    
+
     .ai-btn {
-      background: #26d6a0; 
+      background: #26d6a0;
       color: #183;
       padding: 6px 12px;
-      border-radius: 5px; 
+      border-radius: 5px;
       border: none;
-      font-size: 0.85em; 
+      font-size: 0.85em;
       font-weight: 600;
-      cursor: pointer; 
+      cursor: pointer;
       transition: all .13s;
       margin: 2px;
       min-height: 32px;
     }
-    
-    .ai-btn:hover { 
+
+    .ai-btn:hover {
       background: #51ffc9;
       transform: translateY(-1px);
     }
-    
-    .close-ai { 
-      position: absolute; 
-      top: 8px; 
-      right: 12px; 
-      color: #eee; 
-      background: none; 
-      border: none; 
-      font-size: 1.1em; 
+
+    .close-ai {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      color: #eee;
+      background: none;
+      border: none;
+      font-size: 1.1em;
       cursor: pointer;
       width: 24px;
       height: 24px;
@@ -289,19 +322,19 @@
       justify-content: center;
       border-radius: 4px;
     }
-    
+
     .close-ai:hover {
       background: #ff4757;
       color: white;
     }
-    
-    .ai-tip { 
-      font-size: .8em; 
-      color: #bce9ff; 
+
+    .ai-tip {
+      font-size: .8em;
+      color: #bce9ff;
       margin-top: 4px;
       font-style: italic;
     }
-    
+
     .tooltip {
       position: absolute;
       background: #000;
@@ -315,11 +348,11 @@
       transition: opacity 0.3s;
       white-space: nowrap;
     }
-    
+
     .tooltip.show {
       opacity: 1;
     }
-    
+
     .loading-spinner {
       position: absolute;
       top: 50%;
@@ -334,12 +367,12 @@
       z-index: 1000;
       display: none;
     }
-    
+
     @keyframes spin {
       0% { transform: translate(-50%, -50%) rotate(0deg); }
       100% { transform: translate(-50%, -50%) rotate(360deg); }
     }
-    
+
     .onboarding-modal {
       position: fixed;
       top: 0;
@@ -355,7 +388,7 @@
       padding: 20px;
       box-sizing: border-box;
     }
-    
+
     .onboarding-content {
       background: #1a1c2e;
       border-radius: 15px;
@@ -368,39 +401,39 @@
       width: 100%;
       box-sizing: border-box;
     }
-    
+
     .onboarding-content h2 {
       color: #b1f8e9;
       margin-bottom: 15px;
       font-size: 1.5em;
     }
-    
+
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 12px;
       margin: 15px 0;
     }
-    
+
     .feature-item {
       background: #232538;
       padding: 12px;
       border-radius: 6px;
       border-left: 3px solid #4960ff;
     }
-    
+
     .feature-item h4 {
       color: #b1f8e9;
       margin: 0 0 6px 0;
       font-size: 1em;
     }
-    
+
     .feature-item p {
       margin: 0;
       font-size: 0.85em;
       color: #bce9ff;
     }
-    
+
     .onboarding-close {
       background: #26d6a0;
       color: #183;
@@ -413,7 +446,7 @@
       margin-top: 15px;
       float: right;
     }
-    
+
     .canvas-controls {
       position: absolute;
       top: 8px;
@@ -423,14 +456,14 @@
       z-index: 50;
       flex-wrap: wrap;
     }
-    
+
     .canvas-controls .btn {
       padding: 6px 8px;
       font-size: 0.8em;
       min-width: 35px;
       min-height: 35px;
     }
-    
+
     .progress-bar {
       position: fixed;
       top: 0;
@@ -449,7 +482,7 @@
         gap: 4px;
         justify-content: center;
       }
-      
+
       .btn {
         padding: 10px 8px;
         margin: 1px;
@@ -457,35 +490,35 @@
         min-height: 44px;
         min-width: 44px;
       }
-      
+
       .color-picker {
         width: 44px;
         height: 44px;
         margin: 0 3px;
       }
-      
+
       .range {
         min-width: 60px;
         margin: 0 4px;
       }
-      
+
       #size-val {
         font-size: 0.8em;
         min-width: 30px;
       }
-      
+
       #canvas-wrap {
         padding: 5px;
         min-height: calc(100vh - 140px);
       }
-      
+
       #paint-canvas {
         width: 95vw !important;
         height: auto !important;
         max-height: 60vh;
         border-radius: 8px;
       }
-      
+
       #ai-panel {
         left: 5px;
         right: 5px;
@@ -495,87 +528,87 @@
         max-height: 70vh;
         padding: 12px 15px;
       }
-      
+
       .ai-btn {
         padding: 8px 10px;
         font-size: 0.8em;
         margin: 1px;
         min-height: 36px;
       }
-      
+
       .palette {
         margin-left: 4px;
         gap: 2px;
       }
-      
+
       .palette div {
         width: 14px;
         height: 14px;
       }
-      
+
       .smart-tip {
         font-size: 0.8em;
         padding: 6px 12px;
         top: 10px;
         max-width: 95%;
       }
-      
+
       .canvas-controls {
         top: 5px;
         right: 5px;
         gap: 2px;
       }
-      
+
       .canvas-controls .btn {
         min-width: 32px;
         min-height: 32px;
         padding: 4px 6px;
         font-size: 0.75em;
       }
-      
+
       .footer {
         font-size: 0.75em;
         padding: 6px;
       }
-      
+
       .onboarding-content {
         padding: 15px;
         margin: 10px;
       }
-      
+
       .onboarding-content h2 {
         font-size: 1.3em;
       }
-      
+
       .feature-grid {
         grid-template-columns: 1fr;
         gap: 8px;
       }
     }
-    
+
     @media (max-width: 768px) and (min-width: 481px) {
       .toolbar {
         padding: 8px 6px;
         gap: 5px;
       }
-      
+
       .btn {
         padding: 9px 10px;
         min-height: 42px;
         min-width: 42px;
       }
-      
+
       .color-picker {
         width: 42px;
         height: 42px;
       }
-      
+
       #paint-canvas {
         width: 90vw !important;
         height: auto !important;
         max-height: 65vh;
       }
-      
+
       #ai-panel {
         left: 8px;
         right: 8px;
@@ -583,45 +616,45 @@
         top: 75px;
         max-height: 75vh;
       }
-      
+
       .canvas-controls .btn {
         min-width: 36px;
         min-height: 36px;
       }
     }
-    
+
     /* Landscape mobile orientation */
     @media (max-width: 768px) and (orientation: landscape) {
       #canvas-wrap {
         min-height: calc(100vh - 100px);
       }
-      
+
       #paint-canvas {
         max-height: 70vh;
       }
-      
+
       #ai-panel {
         max-height: 60vh;
         top: 60px;
       }
     }
-    
+
     /* Touch improvements */
     @media (hover: none) and (pointer: coarse) {
       .btn:hover {
         transform: none;
         background: #3a4266;
       }
-      
+
       .btn:active {
         background: #4960ff;
         transform: scale(0.95);
       }
-      
+
       .palette div:hover {
         transform: none;
       }
-      
+
       .palette div:active {
         transform: scale(1.1);
       }
@@ -630,7 +663,7 @@
 </head>
 <body>
   <div class="progress-bar" id="progress-bar"></div>
-  
+
   <div class="toolbar">
     <button class="btn" id="tool-brush" data-tooltip="Brush Tool (B)">🖌️</button>
     <button class="btn" id="tool-eraser" data-tooltip="Eraser Tool (E)">🧹</button>
@@ -653,22 +686,24 @@
     <button class="btn" id="fitToScreen" data-tooltip="Fit to Screen">🔍</button>
     <span id="tipBtn" class="btn" style="font-size:18px;" data-tooltip="Smart Tips">💡</span>
   </div>
-  
+
   <div id="canvas-wrap" style="position:relative;">
     <div class="canvas-controls">
       <button class="btn" id="zoomIn" data-tooltip="Zoom In">🔍+</button>
       <button class="btn" id="zoomOut" data-tooltip="Zoom Out">🔍-</button>
       <button class="btn" id="resetZoom" data-tooltip="Reset Zoom">1:1</button>
+      <button class="btn" id="gridToggle" data-tooltip="Toggle Grid (G)">⚏</button>
     </div>
+    <div class="grid-overlay" id="grid-overlay"></div>
     <canvas id="paint-canvas" width="900" height="550"></canvas>
     <canvas id="selection-canvas" width="900" height="550" style="position: absolute; top: 0; left: 0; pointer-events: none; opacity: 0.7;"></canvas>
     <div class="smart-tip" id="smart-tip"></div>
     <div class="loading-spinner" id="loading-spinner"></div>
-    
+
     <div id="ai-panel">
       <button class="close-ai" id="closeAIPanelBtn">✖</button>
       <h3>🧠 AI & Professional Tools</h3>
-      
+
       <div class="ai-row">
         <label>🎯 Smart Selection</label>
         <button class="ai-btn" id="ai-edge">Edge Detect</button>
@@ -677,14 +712,14 @@
         <span id="ai-refine-val">5</span>
         <div class="ai-tip">Detect edges and refine selections with precision</div>
       </div>
-      
+
       <div class="ai-row">
         <label>🧬 Content-Aware Tools</label>
         <button class="ai-btn" id="ai-inpaint">Remove Object</button>
         <button class="ai-btn" id="ai-patch">Patch Tool</button>
         <div class="ai-tip">Select with Magic Wand ⭐, then remove or patch seamlessly</div>
       </div>
-      
+
       <div class="ai-row">
         <label>🌈 Smart Fill Options</label>
         <label style="font-size: 0.9em; margin-bottom: 4px;">Anti-aliasing:</label>
@@ -693,7 +728,7 @@
         <button class="ai-btn" id="ai-smooth-btn">Apply</button>
         <div class="ai-tip">Smooth edges for professional fills</div>
       </div>
-      
+
       <div class="ai-row">
         <label>🎨 Color & Style Enhancement</label>
         <button class="ai-btn" id="ai-colorize">Vivid Colors</button>
@@ -701,7 +736,7 @@
         <button class="ai-btn" id="ai-saturation">Boost Saturation</button>
         <div class="ai-tip">Bring your artwork to life with vibrant colors</div>
       </div>
-      
+
       <div class="ai-row">
         <label>💡 Lighting Effects</label>
         <button class="ai-btn" id="ai-dodge">Dodge (Lighten)</button>
@@ -709,7 +744,7 @@
         <button class="ai-btn" id="ai-dramatic">Dramatic Light</button>
         <div class="ai-tip">Professional lighting and vivid shading tools</div>
       </div>
-      
+
       <div class="ai-row">
         <label>🎨 Artistic Styles</label>
         <button class="ai-btn" id="ai-style-sketch">Sharp Sketch</button>
@@ -717,7 +752,7 @@
         <button class="ai-btn" id="ai-style-watercolor">Crystal Clear</button>
         <div class="ai-tip">Transform with crystal-clear, sharp artistic filters</div>
       </div>
-      
+
       <div class="ai-row">
         <label>🔧 Selective Adjustments</label>
         <button class="ai-btn" id="ai-contrast">Auto Contrast</button>
@@ -727,11 +762,11 @@
       </div>
     </div>
   </div>
-  
+
   <div class="footer">
     UltraSmart Paint Pro — Professional Web Painting Suite by <a href="https://github.com/darrassipro" style="color:#7ea1ff;text-decoration:none;">@darrassipro</a>
   </div>
-  
+
   <div class="tooltip" id="tooltip"></div>
 
   <script>
@@ -740,7 +775,7 @@
     const ctx = canvas.getContext("2d");
     const selectionCanvas = document.getElementById("selection-canvas");
     const selectionCtx = selectionCanvas.getContext("2d");
-    
+
     let drawing = false;
     let tool = "brush";
     let color = "#09e9c6";
@@ -755,16 +790,69 @@
     let canvasOffsetX = 0;
     let canvasOffsetY = 0;
     let isFirstVisit = !localStorage.getItem('paintProVisited');
+    let showGrid = false;
 
     // Position selection canvas to match main canvas
     function updateSelectionCanvasPosition() {
       const canvasRect = canvas.getBoundingClientRect();
       const wrapRect = document.getElementById("canvas-wrap").getBoundingClientRect();
-      
+
       selectionCanvas.style.left = (canvasRect.left - wrapRect.left) + "px";
       selectionCanvas.style.top = (canvasRect.top - wrapRect.top) + "px";
       selectionCanvas.style.width = canvas.style.width || canvas.width + "px";
       selectionCanvas.style.height = canvas.style.height || canvas.height + "px";
+    }
+
+    // === GRID SYSTEM ===
+    function toggleGrid() {
+      showGrid = !showGrid;
+      const gridToggleBtn = document.getElementById('gridToggle');
+      const gridOverlay = document.getElementById('grid-overlay');
+
+      gridToggleBtn.classList.toggle('active', showGrid);
+
+      if (showGrid) {
+        createGrid();
+        gridOverlay.classList.add('show');
+        showTip("⚏ Grid enabled for precise alignment");
+      } else {
+        gridOverlay.classList.remove('show');
+        showTip("⚏ Grid disabled");
+      }
+    }
+
+    function createGrid() {
+      const gridOverlay = document.getElementById('grid-overlay');
+      gridOverlay.innerHTML = '';
+
+      const canvasRect = canvas.getBoundingClientRect();
+      const wrapRect = document.getElementById("canvas-wrap").getBoundingClientRect();
+
+      const gridSize = 20 * canvasScale;
+      const canvasLeft = canvasRect.left - wrapRect.left;
+      const canvasTop = canvasRect.top - wrapRect.top;
+      const canvasWidth = canvasRect.width;
+      const canvasHeight = canvasRect.height;
+
+      // Vertical lines
+      for (let x = 0; x < canvasWidth; x += gridSize) {
+        const line = document.createElement('div');
+        line.className = 'grid-line vertical';
+        line.style.left = (canvasLeft + x) + 'px';
+        line.style.top = canvasTop + 'px';
+        line.style.height = canvasHeight + 'px';
+        gridOverlay.appendChild(line);
+      }
+
+      // Horizontal lines
+      for (let y = 0; y < canvasHeight; y += gridSize) {
+        const line = document.createElement('div');
+        line.className = 'grid-line horizontal';
+        line.style.left = canvasLeft + 'px';
+        line.style.top = (canvasTop + y) + 'px';
+        line.style.width = canvasWidth + 'px';
+        gridOverlay.appendChild(line);
+      }
     }
 
     // --- PERCEPTUAL COLOR DISTANCE (LAB) ---
@@ -772,19 +860,19 @@
       r = r / 255;
       g = g / 255;
       b = b / 255;
-      
+
       r = r > 0.04045 ? Math.pow((r + 0.055) / 1.055, 2.4) : r / 12.92;
       g = g > 0.04045 ? Math.pow((g + 0.055) / 1.055, 2.4) : g / 12.92;
       b = b > 0.04045 ? Math.pow((b + 0.055) / 1.055, 2.4) : b / 12.92;
-      
+
       let x = (r * 0.4124 + g * 0.3576 + b * 0.1805) / 0.95047;
       let y = (r * 0.2126 + g * 0.7152 + b * 0.0722) / 1.00000;
       let z = (r * 0.0193 + g * 0.1192 + b * 0.9505) / 1.08883;
-      
+
       x = x > 0.008856 ? Math.pow(x, 1/3) : (7.787 * x) + 16/116;
       y = y > 0.008856 ? Math.pow(y, 1/3) : (7.787 * y) + 16/116;
       z = z > 0.008856 ? Math.pow(z, 1/3) : (7.787 * z) + 16/116;
-      
+
       return [
         (116 * y) - 16,
         500 * (x - y),
@@ -828,6 +916,7 @@
     const zoomInBtn = document.getElementById("zoomIn");
     const zoomOutBtn = document.getElementById("zoomOut");
     const resetZoomBtn = document.getElementById("resetZoom");
+    const gridToggleBtn = document.getElementById("gridToggle");
     const fitToScreenBtn = document.getElementById("fitToScreen");
 
     // AI Panel
@@ -840,13 +929,12 @@
       document.querySelectorAll('[data-tooltip]').forEach(element => {
         element.addEventListener('mouseenter', showTooltip);
         element.addEventListener('mouseleave', hideTooltip);
-        
-        // Touch devices - show tooltip on touch
+
+        // Touch devices - show tooltip on touch with passive event handling
         element.addEventListener('touchstart', function(e) {
-          e.preventDefault();
           showTooltip.call(this, e);
           setTimeout(hideTooltip, 2000);
-        }, { passive: false });
+        }, { passive: true });
       });
     }
 
@@ -854,7 +942,7 @@
       const text = e.target.getAttribute('data-tooltip');
       tooltip.textContent = text;
       tooltip.classList.add('show');
-      
+
       const rect = e.target.getBoundingClientRect();
       tooltip.style.left = Math.min(rect.left + rect.width / 2 - tooltip.offsetWidth / 2, window.innerWidth - tooltip.offsetWidth - 10) + 'px';
       tooltip.style.top = rect.bottom + 5 + 'px';
@@ -889,7 +977,7 @@
           <div class="onboarding-content">
             <h2>🎨 Welcome to UltraSmart Paint Pro!</h2>
             <p>Your professional web-based painting suite with AI-powered tools.</p>
-            
+
             <div class="feature-grid">
               <div class="feature-item">
                 <h4>🖌️ Professional Tools</h4>
@@ -905,12 +993,12 @@
               </div>
               <div class="feature-item">
                 <h4>⌨️ Shortcuts</h4>
-                <p>Ctrl+Z (Undo), Ctrl+Y (Redo), B/E/F/W (Tools)</p>
+                <p>Ctrl+Z (Undo), Ctrl+Y (Redo), B/E/F/W (Tools), G (Grid)</p>
               </div>
             </div>
-            
+
             <p><strong>Pro Tip:</strong> Use the Magic Wand to select regions, then apply AI tools for professional results!</p>
-            
+
             <button class="onboarding-close" onclick="this.parentElement.parentElement.remove(); localStorage.setItem('paintProVisited', 'true');">
               Get Started! 🚀
             </button>
@@ -925,15 +1013,20 @@
       const wrap = document.getElementById("canvas-wrap");
       const maxWidth = wrap.clientWidth - 20;
       const maxHeight = wrap.clientHeight - 20;
-      
+
       const scaleX = maxWidth / canvas.width;
       const scaleY = maxHeight / canvas.height;
       const scale = Math.min(scaleX, scaleY, 1);
-      
+
       canvas.style.width = (canvas.width * scale) + 'px';
       canvas.style.height = (canvas.height * scale) + 'px';
       canvasScale = scale;
       updateSelectionCanvasPosition();
+
+      // Update grid if visible
+      if (showGrid) {
+        createGrid();
+      }
     }
 
     function zoomCanvas(factor) {
@@ -942,6 +1035,11 @@
       canvas.style.width = (canvas.width * canvasScale) + 'px';
       canvas.style.height = (canvas.height * canvasScale) + 'px';
       updateSelectionCanvasPosition();
+
+      // Update grid if visible
+      if (showGrid) {
+        createGrid();
+      }
     }
 
     function resetZoom() {
@@ -949,18 +1047,25 @@
       canvas.style.width = canvas.width + 'px';
       canvas.style.height = canvas.height + 'px';
       updateSelectionCanvasPosition();
+
+      // Update grid if visible
+      if (showGrid) {
+        createGrid();
+      }
     }
 
     // Zoom controls
     zoomInBtn.onclick = () => zoomCanvas(1.2);
     zoomOutBtn.onclick = () => zoomCanvas(0.8);
     resetZoomBtn.onclick = resetZoom;
+    gridToggleBtn.onclick = toggleGrid;
     fitToScreenBtn.onclick = fitCanvasToScreen;
 
     // --- SMART TIPS ---
     const TIPS = [
       "🎨 Use <b>B</b> (Brush), <b>E</b> (Eraser), <b>F</b> (Fill), <b>W</b> (Magic Wand) for quick tool switching!",
       "⚡ Press <b>Ctrl+Z</b> to undo, <b>Ctrl+Y</b> to redo your actions.",
+      "⚏ Press <b>G</b> to toggle grid for precise alignment!",
       "⭐ Magic Wand shows marching ants selection - perfect for precise editing!",
       "✨ AI tools now create vivid, full-of-life results!",
       "🧬 Remove objects seamlessly with content-aware technology.",
@@ -970,12 +1075,15 @@
     ];
 
     function showTip(msg) {
+      if (!msg) {
+        msg = TIPS[Math.floor(Math.random() * TIPS.length)];
+      }
       tipPop.innerHTML = msg;
       tipPop.classList.add("show-tip");
       setTimeout(() => tipPop.classList.remove("show-tip"), 5000);
     }
 
-    tipBtn.onclick = () => showTip(TIPS[Math.floor(Math.random() * TIPS.length)]);
+    tipBtn.onclick = () => showTip();
 
     // --- COLOR HARMONIES ---
     function updateHarmonies() {
@@ -989,7 +1097,7 @@
         rgbToHex(base[0], base[1], Math.min(255, base[2] + 60)), // accent
         rgbToHex(Math.max(0, base[0] - 40), Math.max(0, base[1] - 40), Math.max(0, base[2] - 40)) // shadow
       ];
-      
+
       harmonies.forEach((c, i) => {
         let d = document.createElement("div");
         d.style.background = c;
@@ -1009,7 +1117,7 @@
     function setSelectionMask(mask) {
       selectionMask = mask;
       canvas.classList.toggle("selection-on", !!mask);
-      
+
       if (mask) {
         renderVisibleSelection();
         showTip("⭐ Selection created with marching ants! Use AI tools or fill within selection.");
@@ -1020,15 +1128,15 @@
 
     function renderVisibleSelection() {
       if (!selectionMask) return;
-      
+
       // Clear selection canvas
       selectionCtx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
-      
+
       // Find selection bounds for marching ants
       let minX = canvas.width, minY = canvas.height, maxX = 0, maxY = 0;
       const w = canvas.width;
       const h = canvas.height;
-      
+
       for (let y = 0; y < h; y++) {
         for (let x = 0; x < w; x++) {
           if (selectionMask[y * w + x]) {
@@ -1039,16 +1147,16 @@
           }
         }
       }
-      
+
       if (minX < maxX && minY < maxY) {
         selectionBounds = { minX, minY, maxX, maxY };
-        
+
         // Draw marching ants border
         selectionCtx.strokeStyle = "#00ffbb";
         selectionCtx.lineWidth = 2;
         selectionCtx.setLineDash([6, 6]);
         selectionCtx.lineDashOffset = 0;
-        
+
         // Animate marching ants
         let offset = 0;
         const animate = () => {
@@ -1061,7 +1169,7 @@
           }
         };
         animate();
-        
+
         // Fill selection area with semi-transparent overlay
         selectionCtx.fillStyle = "rgba(0, 255, 187, 0.1)";
         selectionCtx.fillRect(minX, minY, maxX - minX, maxY - minY);
@@ -1080,46 +1188,46 @@
         const data = img.data;
         const w = canvas.width;
         const h = canvas.height;
-        
+
         const startIdx = (Math.floor(y) * w + Math.floor(x)) * 4;
         const targetR = data[startIdx];
         const targetG = data[startIdx + 1];
         const targetB = data[startIdx + 2];
         const targetA = data[startIdx + 3];
-        
+
         if (targetA < 10) {
           hideLoading();
           return;
         }
-        
+
         const mask = new Uint8Array(w * h);
         const visited = new Uint8Array(w * h);
         const stack = [[Math.floor(x), Math.floor(y)]];
-        
+
         while (stack.length > 0) {
           const [cx, cy] = stack.pop();
-          
+
           if (cx < 0 || cy < 0 || cx >= w || cy >= h) continue;
           if (visited[cy * w + cx]) continue;
-          
+
           const idx = (cy * w + cx) * 4;
           const r = data[idx];
           const g = data[idx + 1];
           const b = data[idx + 2];
           const a = data[idx + 3];
-          
+
           if (a < 10) continue;
-          
+
           const distance = perceptualColorDistance(targetR, targetG, targetB, r, g, b);
-          
+
           if (distance <= tolerance) {
             visited[cy * w + cx] = 1;
             mask[cy * w + cx] = 1;
-            
+
             stack.push([cx + 1, cy], [cx - 1, cy], [cx, cy + 1], [cx, cy - 1]);
           }
         }
-        
+
         setSelectionMask(mask);
         hideLoading();
       }, 10);
@@ -1131,48 +1239,48 @@
         fillWithinSelection(fillColor);
         return;
       }
-      
+
       showLoading();
       setTimeout(() => {
         const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
         const data = img.data;
         const w = canvas.width;
         const h = canvas.height;
-        
+
         const startIdx = (Math.floor(y) * w + Math.floor(x)) * 4;
         const targetR = data[startIdx];
         const targetG = data[startIdx + 1];
         const targetB = data[startIdx + 2];
         const targetA = data[startIdx + 3];
-        
+
         if (targetA < 10) {
           hideLoading();
           return;
         }
-        
+
         const fillRgb = hexToRgb(fillColor);
         const visited = new Uint8Array(w * h);
         const stack = [[Math.floor(x), Math.floor(y)]];
-        
+
         while (stack.length > 0) {
           const [cx, cy] = stack.pop();
-          
+
           if (cx < 0 || cy < 0 || cx >= w || cy >= h) continue;
           if (visited[cy * w + cx]) continue;
-          
+
           const idx = (cy * w + cx) * 4;
           const r = data[idx];
           const g = data[idx + 1];
           const b = data[idx + 2];
           const a = data[idx + 3];
-          
+
           if (a < 10) continue;
-          
+
           const distance = perceptualColorDistance(targetR, targetG, targetB, r, g, b);
-          
+
           if (distance <= tolerance) {
             visited[cy * w + cx] = 1;
-            
+
             if (smoothLevel > 0 && isEdgePixel(cx, cy, w, h, data, targetR, targetG, targetB, tolerance)) {
               const alpha = 0.7;
               data[idx] = Math.round(alpha * fillRgb[0] + (1 - alpha) * r);
@@ -1184,11 +1292,11 @@
               data[idx + 2] = fillRgb[2];
             }
             data[idx + 3] = 255;
-            
+
             stack.push([cx + 1, cy], [cx - 1, cy], [cx, cy + 1], [cx, cy - 1]);
           }
         }
-        
+
         ctx.putImageData(img, 0, 0);
         hideLoading();
         showTip("🎨 Smart fill completed with anti-aliasing!");
@@ -1214,11 +1322,11 @@
 
     function fillWithinSelection(fillColor) {
       if (!selectionMask) return;
-      
+
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
       const fillRgb = hexToRgb(fillColor);
-      
+
       for (let i = 0; i < selectionMask.length; i++) {
         if (selectionMask[i]) {
           const idx = i * 4;
@@ -1228,7 +1336,7 @@
           data[idx + 3] = 255;
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
       showTip("🎨 Filled within selection!");
     }
@@ -1237,7 +1345,7 @@
     function updateButtonStates() {
       undoBtn.disabled = undoStack.length === 0;
       redoBtn.disabled = redoStack.length === 0;
-      
+
       undoBtn.setAttribute('data-tooltip', undoStack.length === 0 ? 'Nothing to undo' : 'Undo (Ctrl+Z)');
       redoBtn.setAttribute('data-tooltip', redoStack.length === 0 ? 'Nothing to redo' : 'Redo (Ctrl+Y)');
     }
@@ -1246,7 +1354,7 @@
       // Save current state
       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       undoStack.push(imageData);
-      
+
       if (undoStack.length > 50) undoStack.shift();
       redoStack.length = 0;
       updateButtonStates();
@@ -1254,15 +1362,15 @@
 
     function popUndo() {
       if (undoStack.length === 0) return;
-      
+
       // Save current state to redo
       const currentState = ctx.getImageData(0, 0, canvas.width, canvas.height);
       redoStack.push(currentState);
-      
+
       // Restore previous state
       const previousState = undoStack.pop();
       ctx.putImageData(previousState, 0, 0);
-      
+
       // Clear any selection
       setSelectionMask(null);
       updateButtonStates();
@@ -1270,15 +1378,15 @@
 
     function popRedo() {
       if (redoStack.length === 0) return;
-      
+
       // Save current state to undo
       const currentState = ctx.getImageData(0, 0, canvas.width, canvas.height);
       undoStack.push(currentState);
-      
+
       // Restore redo state
       const redoState = redoStack.pop();
       ctx.putImageData(redoState, 0, 0);
-      
+
       updateButtonStates();
     }
 
@@ -1302,20 +1410,20 @@
       const w = canvas.width;
       const h = canvas.height;
       const output = new Uint8ClampedArray(data.length);
-      
+
       // Copy original data
       for (let i = 0; i < data.length; i++) {
         output[i] = data[i];
       }
-      
+
       const sobelX = [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]];
       const sobelY = [[-1, -2, -1], [0, 0, 0], [1, 2, 1]];
-      
+
       for (let y = 1; y < h - 1; y++) {
         for (let x = 1; x < w - 1; x++) {
           if (selectionMask[y * w + x]) {
             let gx = 0, gy = 0;
-            
+
             for (let ky = -1; ky <= 1; ky++) {
               for (let kx = -1; kx <= 1; kx++) {
                 const idx = ((y + ky) * w + (x + kx)) * 4;
@@ -1324,17 +1432,17 @@
                 gy += gray * sobelY[ky + 1][kx + 1];
               }
             }
-            
+
             const magnitude = Math.min(255, Math.sqrt(gx * gx + gy * gy));
             const edge = 255 - magnitude;
             const idx = (y * w + x) * 4;
-            
+
             output[idx] = output[idx + 1] = output[idx + 2] = edge;
             output[idx + 3] = 255;
           }
         }
       }
-      
+
       ctx.putImageData(new ImageData(output, w, h), 0, 0);
     }
 
@@ -1344,14 +1452,14 @@
       const w = canvas.width;
       const h = canvas.height;
       const output = new Uint8ClampedArray(data.length);
-      
+
       const sobelX = [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]];
       const sobelY = [[-1, -2, -1], [0, 0, 0], [1, 2, 1]];
-      
+
       for (let y = 1; y < h - 1; y++) {
         for (let x = 1; x < w - 1; x++) {
           let gx = 0, gy = 0;
-          
+
           for (let ky = -1; ky <= 1; ky++) {
             for (let kx = -1; kx <= 1; kx++) {
               const idx = ((y + ky) * w + (x + kx)) * 4;
@@ -1360,16 +1468,16 @@
               gy += gray * sobelY[ky + 1][kx + 1];
             }
           }
-          
+
           const magnitude = Math.min(255, Math.sqrt(gx * gx + gy * gy));
           const edge = 255 - magnitude;
           const idx = (y * w + x) * 4;
-          
+
           output[idx] = output[idx + 1] = output[idx + 2] = edge;
           output[idx + 3] = 255;
         }
       }
-      
+
       ctx.putImageData(new ImageData(output, w, h), 0, 0);
     }
 
@@ -1379,7 +1487,7 @@
         showTip("⚠️ Please select a region with Magic Wand first!");
         return;
       }
-      
+
       pushUndo();
       showLoading();
       setTimeout(() => {
@@ -1395,14 +1503,14 @@
       const data = img.data;
       const w = canvas.width;
       const h = canvas.height;
-      
+
       // Multi-pass content-aware fill with improved algorithm
       for (let pass = 0; pass < 5; pass++) {
         for (let y = 1; y < h - 1; y++) {
           for (let x = 1; x < w - 1; x++) {
             if (selectionMask[y * w + x]) {
               let r = 0, g = 0, b = 0, totalWeight = 0;
-              
+
               // Sample from surrounding non-selected pixels with distance weighting
               for (let dy = -3; dy <= 3; dy++) {
                 for (let dx = -3; dx <= 3; dx++) {
@@ -1412,7 +1520,7 @@
                     const idx = (ny * w + nx) * 4;
                     const distance = Math.sqrt(dx * dx + dy * dy);
                     const weight = 1 / (distance + 0.1);
-                    
+
                     r += data[idx] * weight;
                     g += data[idx + 1] * weight;
                     b += data[idx + 2] * weight;
@@ -1420,7 +1528,7 @@
                   }
                 }
               }
-              
+
               if (totalWeight > 0) {
                 const idx = (y * w + x) * 4;
                 data[idx] = Math.round(r / totalWeight);
@@ -1432,7 +1540,7 @@
           }
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
@@ -1442,7 +1550,7 @@
         showTip("⚠️ Please select a region with Magic Wand first!");
         return;
       }
-      
+
       pushUndo();
       showLoading();
       setTimeout(() => {
@@ -1458,25 +1566,25 @@
       const data = img.data;
       const w = canvas.width;
       const h = canvas.height;
-      
+
       // Find the best matching area to use as patch source
       const { minX, minY, maxX, maxY } = getSelectionBounds();
       const selectionWidth = maxX - minX;
       const selectionHeight = maxY - minY;
-      
+
       let bestMatch = null;
       let bestScore = Infinity;
-      
+
       // Search for best matching region
       for (let sy = 0; sy <= h - selectionHeight; sy += 5) {
         for (let sx = 0; sx <= w - selectionWidth; sx += 5) {
           // Skip if overlaps with selection
-          if (sx < maxX && sx + selectionWidth > minX && 
+          if (sx < maxX && sx + selectionWidth > minX &&
               sy < maxY && sy + selectionHeight > minY) continue;
-          
+
           let score = 0;
           let samples = 0;
-          
+
           // Sample edge pixels for matching
           for (let y = 0; y < selectionHeight; y += 2) {
             for (let x = 0; x < selectionWidth; x += 2) {
@@ -1486,7 +1594,7 @@
                   for (let dx = -1; dx <= 1; dx++) {
                     const selIdx = ((minY + y + dy) * w + (minX + x + dx)) * 4;
                     const srcIdx = ((sy + y + dy) * w + (sx + x + dx)) * 4;
-                    
+
                     if (!selectionMask[(minY + y + dy) * w + (minX + x + dx)]) {
                       const diff = Math.abs(data[selIdx] - data[srcIdx]) +
                                    Math.abs(data[selIdx + 1] - data[srcIdx + 1]) +
@@ -1499,7 +1607,7 @@
               }
             }
           }
-          
+
           if (samples > 0) {
             score /= samples;
             if (score < bestScore) {
@@ -1509,15 +1617,15 @@
           }
         }
       }
-      
+
       // Apply the best patch
       if (bestMatch) {
         for (let y = 0; y < selectionHeight; y++) {
           for (let x = 0; x < selectionWidth; x++) {
-                        if (selectionMask[(minY + y) * w + (minX + x)]) {
+            if (selectionMask[(minY + y) * w + (minX + x)]) {
               const srcIdx = ((bestMatch.sy + y) * w + (bestMatch.sx + x)) * 4;
               const dstIdx = ((minY + y) * w + (minX + x)) * 4;
-              
+
               data[dstIdx] = data[srcIdx];
               data[dstIdx + 1] = data[srcIdx + 1];
               data[dstIdx + 2] = data[srcIdx + 2];
@@ -1526,7 +1634,7 @@
           }
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
@@ -1534,7 +1642,7 @@
       let minX = canvas.width, minY = canvas.height, maxX = 0, maxY = 0;
       const w = canvas.width;
       const h = canvas.height;
-      
+
       for (let y = 0; y < h; y++) {
         for (let x = 0; x < w; x++) {
           if (selectionMask[y * w + x]) {
@@ -1545,7 +1653,7 @@
           }
         }
       }
-      
+
       return { minX, minY, maxX, maxY };
     }
 
@@ -1558,7 +1666,7 @@
         showTip("⚠️ Please select a region first!");
         return;
       }
-      
+
       const refinement = +refineSlider.value;
       refineSelection(refinement);
       showTip("🎯 Selection refined in perfect harmony!");
@@ -1568,13 +1676,13 @@
       const w = canvas.width;
       const h = canvas.height;
       const newMask = new Uint8Array(w * h);
-      
+
       if (refinement > 0) {
         // Expand selection
         for (let y = 0; y < h; y++) {
           for (let x = 0; x < w; x++) {
             let shouldSelect = selectionMask[y * w + x];
-            
+
             if (!shouldSelect) {
               // Check if within expansion radius of selected pixel
               for (let dy = -refinement; dy <= refinement && !shouldSelect; dy++) {
@@ -1590,7 +1698,7 @@
                 }
               }
             }
-            
+
             newMask[y * w + x] = shouldSelect ? 1 : 0;
           }
         }
@@ -1601,14 +1709,14 @@
           for (let x = 0; x < w; x++) {
             if (selectionMask[y * w + x]) {
               let shouldKeep = true;
-              
+
               // Check if all pixels within contract radius are selected
               for (let dy = -contractAmount; dy <= contractAmount && shouldKeep; dy++) {
                 for (let dx = -contractAmount; dx <= contractAmount && shouldKeep; dx++) {
                   const nx = x + dx;
                   const ny = y + dy;
                   const distance = Math.sqrt(dx * dx + dy * dy);
-                  
+
                   if (distance <= contractAmount) {
                     if (nx < 0 || ny < 0 || nx >= w || ny >= h || !selectionMask[ny * w + nx]) {
                       shouldKeep = false;
@@ -1616,13 +1724,13 @@
                   }
                 }
               }
-              
+
               newMask[y * w + x] = shouldKeep ? 1 : 0;
             }
           }
         }
       }
-      
+
       setSelectionMask(newMask);
     }
 
@@ -1645,25 +1753,25 @@
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
       const w = canvas.width;
-      
+
       for (let i = 0; i < selectionMask.length; i++) {
         if (selectionMask[i]) {
           const idx = i * 4;
           enhancePixelVividness(data, idx);
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
     function vividColorsFullImage() {
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
-      
+
       for (let i = 0; i < data.length; i += 4) {
         enhancePixelVividness(data, i);
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
@@ -1671,13 +1779,13 @@
       const r = data[idx];
       const g = data[idx + 1];
       const b = data[idx + 2];
-      
+
       // Convert to HSV for better saturation control
       const hsv = rgbToHsv(r, g, b);
-      
+
       // Boost saturation dramatically
       hsv[1] = Math.min(1, hsv[1] * 1.8 + 0.2);
-      
+
       // Enhance brightness selectively
       if (hsv[2] < 0.3) {
         hsv[2] = Math.min(1, hsv[2] * 1.4); // Brighten shadows
@@ -1686,7 +1794,7 @@
       } else {
         hsv[2] = Math.min(1, hsv[2] * 1.3); // Boost midtones significantly
       }
-      
+
       // Convert back to RGB
       const newRgb = hsvToRgb(hsv[0], hsv[1], hsv[2]);
       data[idx] = newRgb[0];
@@ -1698,11 +1806,11 @@
       r /= 255;
       g /= 255;
       b /= 255;
-      
+
       const max = Math.max(r, g, b);
       const min = Math.min(r, g, b);
       const diff = max - min;
-      
+
       let h = 0;
       if (diff !== 0) {
         if (max === r) h = ((g - b) / diff) % 6;
@@ -1711,10 +1819,10 @@
       }
       h = Math.round(h * 60);
       if (h < 0) h += 360;
-      
+
       const s = max === 0 ? 0 : diff / max;
       const v = max;
-      
+
       return [h / 360, s, v];
     }
 
@@ -1723,16 +1831,16 @@
       const c = v * s;
       const x = c * (1 - Math.abs((h / 60) % 2 - 1));
       const m = v - c;
-      
+
       let r = 0, g = 0, b = 0;
-      
+
       if (0 <= h && h < 60) [r, g, b] = [c, x, 0];
       else if (60 <= h && h < 120) [r, g, b] = [x, c, 0];
       else if (120 <= h && h < 180) [r, g, b] = [0, c, x];
       else if (180 <= h && h < 240) [r, g, b] = [0, x, c];
       else if (240 <= h && h < 300) [r, g, b] = [x, 0, c];
       else if (300 <= h && h < 360) [r, g, b] = [c, 0, x];
-      
+
       return [
         Math.round((r + m) * 255),
         Math.round((g + m) * 255),
@@ -1758,25 +1866,25 @@
     function colorHarmonyInSelection() {
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
-      
+
       for (let i = 0; i < selectionMask.length; i++) {
         if (selectionMask[i]) {
           const idx = i * 4;
           harmonizePixelColor(data, idx);
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
     function colorHarmonyFullImage() {
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
-      
+
       for (let i = 0; i < data.length; i += 4) {
         harmonizePixelColor(data, i);
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
@@ -1784,10 +1892,10 @@
       const r = data[idx];
       const g = data[idx + 1];
       const b = data[idx + 2];
-      
+
       // Apply warm/cool balance based on color temperature
       const temperature = (r - b) / 255;
-      
+
       if (temperature > 0.1) {
         // Warm tones - enhance warmth
         data[idx] = Math.min(255, r * 1.15);
@@ -1824,25 +1932,25 @@
     function boostSaturationInSelection() {
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
-      
+
       for (let i = 0; i < selectionMask.length; i++) {
         if (selectionMask[i]) {
           const idx = i * 4;
           boostPixelSaturation(data, idx);
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
     function boostSaturationFullImage() {
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
-      
+
       for (let i = 0; i < data.length; i += 4) {
         boostPixelSaturation(data, i);
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
@@ -1850,18 +1958,18 @@
       const r = data[idx] / 255;
       const g = data[idx + 1] / 255;
       const b = data[idx + 2] / 255;
-      
+
       const max = Math.max(r, g, b);
       const min = Math.min(r, g, b);
       const delta = max - min;
-      
+
       if (delta > 0) {
         const saturation = delta / max;
         const newSaturation = Math.min(1, saturation * 2.2);
-        
+
         const factor = newSaturation / saturation;
         const gray = (r + g + b) / 3;
-        
+
         data[idx] = Math.round(Math.min(255, (gray + (r - gray) * factor) * 255));
         data[idx + 1] = Math.round(Math.min(255, (gray + (g - gray) * factor) * 255));
         data[idx + 2] = Math.round(Math.min(255, (gray + (b - gray) * factor) * 255));
@@ -1869,14 +1977,14 @@
     }
 
     // Dramatic Lighting Effects
-    document.getElementById("ai-dodge").onclick = () => { 
-      setToolUI("dodge"); 
-      showTip("💡 Dodge tool activated - paint to create vivid highlights!"); 
+    document.getElementById("ai-dodge").onclick = () => {
+      setToolUI("dodge");
+      showTip("💡 Dodge tool activated - paint to create vivid highlights!");
     };
-    
-    document.getElementById("ai-burn").onclick = () => { 
-      setToolUI("burn"); 
-      showTip("🔥 Burn tool activated - paint to create dramatic shadows!"); 
+
+    document.getElementById("ai-burn").onclick = () => {
+      setToolUI("burn");
+      showTip("🔥 Burn tool activated - paint to create dramatic shadows!");
     };
 
     document.getElementById("ai-dramatic").onclick = function() {
@@ -1896,25 +2004,25 @@
     function dramaticLightInSelection() {
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
-      
+
       for (let i = 0; i < selectionMask.length; i++) {
         if (selectionMask[i]) {
           const idx = i * 4;
           applyDramaticLighting(data, idx);
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
     function dramaticLightFullImage() {
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
-      
+
       for (let i = 0; i < data.length; i += 4) {
         applyDramaticLighting(data, i);
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
@@ -1923,7 +2031,7 @@
       const g = data[idx + 1];
       const b = data[idx + 2];
       const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
-      
+
       let factor;
       if (luminance < 85) {
         // Deep shadows - make darker but preserve some detail
@@ -1935,7 +2043,7 @@
         // Midtones - enhance contrast
         factor = luminance < 128 ? 0.8 : 1.2;
       }
-      
+
       data[idx] = Math.min(255, Math.max(0, r * factor));
       data[idx + 1] = Math.min(255, Math.max(0, g * factor));
       data[idx + 2] = Math.min(255, Math.max(0, b * factor));
@@ -1960,20 +2068,20 @@
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
       const w = canvas.width;
-      
+
       // Create edge-enhanced grayscale in selection
       for (let i = 0; i < selectionMask.length; i++) {
         if (selectionMask[i]) {
           const idx = i * 4;
           const gray = data[idx] * 0.299 + data[idx + 1] * 0.587 + data[idx + 2] * 0.114;
-          
+
           // Enhanced contrast for sharper lines
           const enhanced = gray < 128 ? gray * 0.7 : Math.min(255, gray * 1.3);
-          
+
           data[idx] = data[idx + 1] = data[idx + 2] = enhanced;
         }
       }
-      
+
       // Apply sharpening to selected area
       sharpenInSelection(data, w);
       ctx.putImageData(img, 0, 0);
@@ -1984,14 +2092,14 @@
       const data = img.data;
       const w = canvas.width;
       const h = canvas.height;
-      
+
       // Convert to high-contrast grayscale
       for (let i = 0; i < data.length; i += 4) {
         const gray = data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114;
         const enhanced = gray < 128 ? gray * 0.7 : Math.min(255, gray * 1.3);
         data[i] = data[i + 1] = data[i + 2] = enhanced;
       }
-      
+
       // Apply edge enhancement
       const edgeData = new Uint8ClampedArray(data.length);
       const kernel = [
@@ -1999,7 +2107,7 @@
         [-1,  9, -1],
         [-1, -1, -1]
       ];
-      
+
       for (let y = 1; y < h - 1; y++) {
         for (let x = 1; x < w - 1; x++) {
           let sum = 0;
@@ -2015,7 +2123,7 @@
           edgeData[idx + 3] = 255;
         }
       }
-      
+
       ctx.putImageData(new ImageData(edgeData, w, h), 0, 0);
     }
 
@@ -2025,14 +2133,14 @@
         [-1, 5, -1],
         [0, -1, 0]
       ];
-      
+
       const original = new Uint8ClampedArray(data);
-      
+
       for (let i = 0; i < selectionMask.length; i++) {
         if (selectionMask[i]) {
           const y = Math.floor(i / width);
           const x = i % width;
-          
+
           if (y > 0 && y < canvas.height - 1 && x > 0 && x < width - 1) {
             let sum = 0;
             for (let ky = -1; ky <= 1; ky++) {
@@ -2067,25 +2175,25 @@
     function vividPaintInSelection() {
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
-      
+
       for (let i = 0; i < selectionMask.length; i++) {
         if (selectionMask[i]) {
           const idx = i * 4;
           applyVividPaintEffect(data, idx);
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
     function vividPaintFullImage() {
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
-      
+
       for (let i = 0; i < data.length; i += 4) {
         applyVividPaintEffect(data, i);
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
@@ -2095,12 +2203,12 @@
       let r = Math.round(data[idx] / levels) * levels;
       let g = Math.round(data[idx + 1] / levels) * levels;
       let b = Math.round(data[idx + 2] / levels) * levels;
-      
+
       // Boost saturation dramatically
       const hsv = rgbToHsv(r, g, b);
       hsv[1] = Math.min(1, hsv[1] * 2.5); // Extreme saturation boost
       hsv[2] = Math.min(1, hsv[2] * 1.2); // Slight brightness boost
-      
+
       const newRgb = hsvToRgb(hsv[0], hsv[1], hsv[2]);
       data[idx] = newRgb[0];
       data[idx + 1] = newRgb[1];
@@ -2126,7 +2234,7 @@
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
       const w = canvas.width;
-      
+
       // Apply unsharp mask for crystal clarity
       applyCrystalClarityToSelection(data, w);
       ctx.putImageData(img, 0, 0);
@@ -2137,10 +2245,10 @@
       const data = img.data;
       const w = canvas.width;
       const h = canvas.height;
-      
+
       // Create unsharp mask for ultimate clarity
       const blurred = new Uint8ClampedArray(data);
-      
+
       // Apply Gaussian blur
       for (let y = 1; y < h - 1; y++) {
         for (let x = 1; x < w - 1; x++) {
@@ -2156,7 +2264,7 @@
           }
         }
       }
-      
+
       // Apply unsharp mask
       for (let i = 0; i < data.length; i += 4) {
         for (let c = 0; c < 3; c++) {
@@ -2166,19 +2274,19 @@
           data[i + c] = Math.min(255, Math.max(0, enhanced));
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
     function applyCrystalClarityToSelection(data, width) {
       const original = new Uint8ClampedArray(data);
-      
+
       // Apply unsharp mask to selected pixels only
       for (let i = 0; i < selectionMask.length; i++) {
         if (selectionMask[i]) {
           const y = Math.floor(i / width);
           const x = i % width;
-          
+
           if (y > 0 && y < canvas.height - 1 && x > 0 && x < width - 1) {
             for (let c = 0; c < 3; c++) {
               let blur = 0;
@@ -2189,7 +2297,7 @@
                 }
               }
               blur /= 9;
-              
+
               const idx = i * 4 + c;
               const enhanced = original[idx] + (original[idx] - blur) * 2.5;
               data[idx] = Math.min(255, Math.max(0, enhanced));
@@ -2205,7 +2313,7 @@
         showTip("⚠️ Please select an area first to apply selective blur!");
         return;
       }
-      
+
       pushUndo();
       showLoading();
       setTimeout(() => {
@@ -2221,18 +2329,18 @@
       const w = canvas.width;
       const h = canvas.height;
       const original = new Uint8ClampedArray(data);
-      
+
       // Apply Gaussian blur only to selected pixels
       for (let i = 0; i < selectionMask.length; i++) {
         if (selectionMask[i]) {
           const y = Math.floor(i / w);
           const x = i % w;
-          
+
           if (y > 1 && y < h - 2 && x > 1 && x < w - 2) {
             for (let c = 0; c < 3; c++) {
               let sum = 0;
               let weight = 0;
-              
+
               // 5x5 Gaussian kernel
               for (let dy = -2; dy <= 2; dy++) {
                 for (let dx = -2; dx <= 2; dx++) {
@@ -2243,13 +2351,13 @@
                   weight += gaussian;
                 }
               }
-              
+
               data[i * 4 + c] = sum / weight;
             }
           }
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
@@ -2281,7 +2389,7 @@
     function autoContrastInSelection() {
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
-      
+
       // Find min/max values in selection
       let min = 255, max = 0;
       for (let i = 0; i < selectionMask.length; i++) {
@@ -2292,10 +2400,10 @@
           max = Math.max(max, avg);
         }
       }
-      
+
       const range = max - min;
       const scale = range > 0 ? 255 / range : 1;
-      
+
       for (let i = 0; i < selectionMask.length; i++) {
         if (selectionMask[i]) {
           const idx = i * 4;
@@ -2304,30 +2412,30 @@
           }
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
     function autoContrastFullImage() {
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
-      
+
       let min = 255, max = 0;
       for (let i = 0; i < data.length; i += 4) {
         const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
         min = Math.min(min, avg);
         max = Math.max(max, avg);
       }
-      
+
       const range = max - min;
       const scale = range > 0 ? 255 / range : 1;
-      
+
       for (let i = 0; i < data.length; i += 4) {
         for (let j = 0; j < 3; j++) {
           data[i + j] = Math.min(255, Math.max(0, (data[i + j] - min) * scale));
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
@@ -2350,7 +2458,7 @@
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
       const w = canvas.width;
-      
+
       sharpenInSelection(data, w);
       ctx.putImageData(img, 0, 0);
     }
@@ -2361,13 +2469,13 @@
       const w = canvas.width;
       const h = canvas.height;
       const output = new Uint8ClampedArray(data.length);
-      
+
       const kernel = [
         [0, -1, 0],
         [-1, 5, -1],
         [0, -1, 0]
       ];
-      
+
       for (let y = 1; y < h - 1; y++) {
         for (let x = 1; x < w - 1; x++) {
           for (let c = 0; c < 3; c++) {
@@ -2384,7 +2492,7 @@
           output[(y * w + x) * 4 + 3] = 255;
         }
       }
-      
+
       ctx.putImageData(new ImageData(output, w, h), 0, 0);
     }
 
@@ -2392,19 +2500,19 @@
     function setToolUI(t) {
       tool = t;
       [toolBrush, toolEraser, toolFill, magicWandBtn].forEach(btn => btn.classList.remove("active"));
-      
+
       if (tool === "brush") toolBrush.classList.add("active");
       else if (tool === "eraser") toolEraser.classList.add("active");
       else if (tool === "fill") toolFill.classList.add("active");
       else if (tool === "magicWand") magicWandBtn.classList.add("active");
-      
+
       if (tool === "brush" || tool === "eraser") {
         if (selectionMask) {
           setSelectionMask(null);
           showTip("🎨 Selection cleared - ready to paint!");
         }
       }
-      
+
       const cursors = {
         "brush": "crosshair",
         "eraser": "not-allowed",
@@ -2413,20 +2521,20 @@
         "dodge": "crosshair",
         "burn": "crosshair"
       };
-      
+
       canvas.style.cursor = cursors[tool] || "crosshair";
       updateButtonStates();
     }
 
     colorInput.value = color;
-    colorInput.oninput = e => { 
-      color = e.target.value; 
+    colorInput.oninput = e => {
+      color = e.target.value;
       updateHarmonies();
       showTip("🎨 Color selected!");
     };
-    
-    sizeInput.oninput = e => { 
-      size = +e.target.value; 
+
+    sizeInput.oninput = e => {
+      size = +e.target.value;
       sizeVal.textContent = size + 'px';
     };
 
@@ -2442,18 +2550,18 @@
     // --- DRAWING ENGINE ---
     canvas.onmousedown = e => {
       const [x, y] = xy(e);
-      
+
       if (tool === "fill") {
         pushUndo();
         smartFillPerceptual(x, y, color, fillTolerance, +smoothSlider.value);
         return;
       }
-      
+
       if (tool === "magicWand") {
         magicWandPerceptual(x, y, fillTolerance);
         return;
       }
-      
+
       if (["eraser", "brush", "dodge", "burn"].includes(tool)) {
         drawing = true;
         last = [x, y];
@@ -2461,7 +2569,7 @@
         ctx.moveTo(x, y);
         ctx.lineWidth = size;
         ctx.lineCap = ctx.lineJoin = "round";
-        
+
         if (tool === "eraser") {
           ctx.globalCompositeOperation = "destination-out";
           ctx.strokeStyle = "rgba(0,0,0,1)";
@@ -2469,7 +2577,7 @@
           ctx.globalCompositeOperation = "source-over";
           ctx.strokeStyle = color;
         }
-        
+
         ctx.globalAlpha = tool === "brush" ? 0.97 : 1;
         pushUndo();
       }
@@ -2477,32 +2585,32 @@
 
     canvas.onmousemove = e => {
       if (!drawing) return;
-      
+
       const [x, y] = xy(e);
-      
+
       if (tool === "dodge" || tool === "burn") {
         const radius = size / 2;
         const img = ctx.getImageData(x - radius, y - radius, size, size);
         const data = img.data;
-        
+
         for (let i = 0; i < data.length; i += 4) {
           const px = (i / 4) % size - radius;
           const py = Math.floor((i / 4) / size) - radius;
           const distance = Math.sqrt(px * px + py * py);
           const falloff = Math.max(0, 1 - distance / radius);
-          
+
           const adjustment = (tool === "dodge" ? 30 : -25) * falloff;
-          
+
           for (let j = 0; j < 3; j++) {
             data[i + j] = Math.min(255, Math.max(0, data[i + j] + adjustment));
           }
         }
-        
+
         ctx.putImageData(img, x - radius, y - radius);
         last = [x, y];
         return;
       }
-      
+
       ctx.lineWidth = size;
       ctx.lineTo(x, y);
       ctx.stroke();
@@ -2519,56 +2627,61 @@
       }
     };
 
-    // Touch events
+    // FIXED: Touch events with proper passive handling for scrolling
     canvas.ontouchstart = e => {
-      e.preventDefault();
-      const [x, y] = xy(e);
-      
-      if (tool === "fill") {
+      // Only prevent default for single-touch drawing interactions
+      if (e.touches.length === 1) {
+        e.preventDefault();
+        const [x, y] = xy(e);
+
+        if (tool === "fill") {
+          pushUndo();
+          smartFillPerceptual(x, y, color, fillTolerance, +smoothSlider.value);
+          return;
+        }
+
+        if (tool === "magicWand") {
+          magicWandPerceptual(x, y, fillTolerance);
+          return;
+        }
+
+        drawing = true;
+        last = [x, y];
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineWidth = size;
+        ctx.lineCap = ctx.lineJoin = "round";
+
+        if (tool === "eraser") {
+          ctx.globalCompositeOperation = "destination-out";
+          ctx.strokeStyle = "rgba(0,0,0,1)";
+        } else {
+          ctx.globalCompositeOperation = "source-over";
+          ctx.strokeStyle = color;
+        }
+
+        ctx.globalAlpha = tool === "brush" ? 0.97 : 1;
         pushUndo();
-        smartFillPerceptual(x, y, color, fillTolerance, +smoothSlider.value);
-        return;
       }
-      
-      if (tool === "magicWand") {
-        magicWandPerceptual(x, y, fillTolerance);
-        return;
-      }
-      
-      drawing = true;
-      last = [x, y];
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.lineWidth = size;
-      ctx.lineCap = ctx.lineJoin = "round";
-      
-      if (tool === "eraser") {
-        ctx.globalCompositeOperation = "destination-out";
-        ctx.strokeStyle = "rgba(0,0,0,1)";
-      } else {
-        ctx.globalCompositeOperation = "source-over";
-        ctx.strokeStyle = color;
-      }
-      
-      ctx.globalAlpha = tool === "brush" ? 0.97 : 1;
-      pushUndo();
     };
 
     canvas.ontouchmove = e => {
-      e.preventDefault();
-      if (!drawing) return;
-      
-      const [x, y] = xy(e);
-      ctx.lineTo(x, y);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      last = [x, y];
+      // Only prevent default for single-touch drawing
+      if (e.touches.length === 1 && drawing) {
+        e.preventDefault();
+        const [x, y] = xy(e);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        last = [x, y];
+      }
+      // Allow multi-touch for scrolling/zooming
     };
 
     canvas.ontouchend = e => {
-      e.preventDefault();
       if (drawing) {
+        e.preventDefault();
         drawing = false;
         ctx.globalCompositeOperation = "source-over";
         ctx.globalAlpha = 1;
@@ -2599,27 +2712,27 @@
       exportCanvas.width = canvas.width;
       exportCanvas.height = canvas.height;
       const exportCtx = exportCanvas.getContext('2d');
-      
+
       exportCtx.fillStyle = "#ffffff";
       exportCtx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
-      
+
       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const cleanData = new Uint8ClampedArray(imageData.data);
-      
+
       for (let i = 0; i < cleanData.length; i += 4) {
         if (cleanData[i + 3] < 255 && cleanData[i + 3] > 0) {
           cleanData[i + 3] = 255;
         }
       }
-      
+
       const cleanImageData = new ImageData(cleanData, canvas.width, canvas.height);
       exportCtx.putImageData(cleanImageData, 0, 0);
-      
+
       const link = document.createElement("a");
       link.href = exportCanvas.toDataURL("image/png");
       link.download = `ultra-paint-pro-${Date.now()}.png`;
       link.click();
-      
+
       showTip("💾 High-quality image saved!");
     };
 
@@ -2629,18 +2742,18 @@
     importInput.onchange = e => {
       const file = e.target.files[0];
       if (!file) return;
-      
+
       showLoading();
       const reader = new FileReader();
       reader.onload = ev => {
         const img = new Image();
         img.onload = function() {
           pushUndo();
-          
+
           const maxWidth = canvas.width;
           const maxHeight = canvas.height;
           let { width, height } = img;
-          
+
           if (width > maxWidth || height > maxHeight) {
             const aspectRatio = width / height;
             if (width > height) {
@@ -2659,10 +2772,10 @@
               }
             }
           }
-          
+
           const x = (canvas.width - width) / 2;
           const y = (canvas.height - height) / 2;
-          
+
           ctx.fillStyle = "#ffffff";
           ctx.fillRect(0, 0, canvas.width, canvas.height);
           ctx.drawImage(img, x, y, width, height);
@@ -2692,10 +2805,10 @@
     function autoEnhanceAdvanced() {
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = img.data;
-      
+
       const histogram = { r: new Array(256).fill(0), g: new Array(256).fill(0), b: new Array(256).fill(0) };
       let pixelCount = 0;
-      
+
       for (let i = 0; i < data.length; i += 4) {
         if (data[i + 3] > 0) {
           histogram.r[data[i]]++;
@@ -2704,34 +2817,34 @@
           pixelCount++;
         }
       }
-      
+
       function findRange(hist) {
         const total = pixelCount;
         const cutoff = total * 0.01;
-        
+
         let min = 0, max = 255;
         let sum = 0;
-        
+
         for (let i = 0; i < 256; i++) {
           sum += hist[i];
           if (sum > cutoff && min === 0) min = i;
         }
-        
+
         sum = 0;
         for (let i = 255; i >= 0; i--) {
           sum += hist[i];
           if (sum > cutoff) { max = i; break; }
         }
-        
+
         return { min, max };
       }
-      
+
       const ranges = {
         r: findRange(histogram.r),
         g: findRange(histogram.g),
         b: findRange(histogram.b)
       };
-      
+
       for (let i = 0; i < data.length; i += 4) {
         if (data[i + 3] > 0) {
           ['r', 'g', 'b'].forEach((channel, idx) => {
@@ -2742,7 +2855,7 @@
           });
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
@@ -2762,59 +2875,59 @@
       const data = img.data;
       const w = canvas.width;
       const h = canvas.height;
-      
+
       const edgePixels = [];
       const sampleSize = 20;
-      
+
       for (let x = 0; x < w; x += Math.max(1, Math.floor(w / sampleSize))) {
         edgePixels.push([data[x * 4], data[x * 4 + 1], data[x * 4 + 2]]);
         edgePixels.push([data[((h - 1) * w + x) * 4], data[((h - 1) * w + x) * 4 + 1], data[((h - 1) * w + x) * 4 + 2]]);
       }
-      
+
       for (let y = 0; y < h; y += Math.max(1, Math.floor(h / sampleSize))) {
         edgePixels.push([data[y * w * 4], data[y * w * 4 + 1], data[y * w * 4 + 2]]);
         edgePixels.push([data[(y * w + w - 1) * 4], data[(y * w + w - 1) * 4 + 1], data[(y * w + w - 1) * 4 + 2]]);
       }
-      
+
       const bgColor = findDominantColor(edgePixels);
-      
+
       const tolerance = 40;
       for (let i = 0; i < data.length; i += 4) {
         const distance = perceptualColorDistance(
           data[i], data[i + 1], data[i + 2],
           bgColor[0], bgColor[1], bgColor[2]
         );
-        
+
         if (distance < tolerance) {
           data[i + 3] = 0;
         }
       }
-      
+
       ctx.putImageData(img, 0, 0);
     }
 
     function findDominantColor(pixels) {
       const colorCounts = new Map();
-      
+
       pixels.forEach(([r, g, b]) => {
         const qr = Math.round(r / 16) * 16;
         const qg = Math.round(g / 16) * 16;
         const qb = Math.round(b / 16) * 16;
         const key = `${qr},${qg},${qb}`;
-        
+
         colorCounts.set(key, (colorCounts.get(key) || 0) + 1);
       });
-      
+
       let maxCount = 0;
       let dominantColor = [255, 255, 255];
-      
+
       for (const [key, count] of colorCounts) {
         if (count > maxCount) {
           maxCount = count;
           dominantColor = key.split(',').map(Number);
         }
       }
-      
+
       return dominantColor;
     }
 
@@ -2834,6 +2947,7 @@
           case "w": setToolUI("magicWand"); break;
           case "d": setToolUI("dodge"); break;
           case "u": setToolUI("burn"); break;
+          case "g": toggleGrid(); break;
         }
       }
     });
@@ -2860,18 +2974,20 @@
     window.onload = function() {
       ctx.fillStyle = "#ffffff";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
+
       updateHarmonies();
       setToolUI("brush");
       updateButtonStates();
       initTooltips();
+
+      // Auto-fit canvas to screen on load
       fitCanvasToScreen();
       updateSelectionCanvasPosition();
-      
+
       setTimeout(showOnboarding, 500);
-      
+
       setTimeout(() => {
-        showTip("🎨 Welcome! Magic Wand (⭐) now shows marching ants selection!");
+        showTip("🎨 Welcome! Grid (G) added next to zoom controls, touch scrolling fixed!");
       }, 1000);
       
       window.addEventListener('resize', () => {
